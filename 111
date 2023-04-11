@@ -1,0 +1,43 @@
+scp -p adept-tech@192.168.1.5:/home/adept-tech/Documents/sjf_backup/db_apr_29.sql /home/user/Documents   ---> use for copy file
+
+
+ssh adept-tech @192.168.1.5  ---> use for connect with other pc.
+
+python3 odoo/odoo-bin --addons-path odoo/addons/,~/kwrtech_sjf_addons
+
+python3.7 odoo-bin --addons addons,~/sachitanand,~/kwrtech_sjf_addons -d jul-07-2022.sql
+
+python3.7 odoo-bin --addons ~/sachitanand,~/kwrtech_sjf_addons -d jul-07-2022.sql --limit-time-real 9000
+
+psql db_apr_29 < db_apr_29.sql   ---> use for restore database
+
+
+
+
+change time zone:
+			     (our time zone)	(our field name)		 (UTC time zone)
+				  |			|		    |
+				  |			|	    	    |
+	from_date=pytz.timezone(self.env.user.tz).localize(from_date).astimezone(pytz.utc)
+	
+	
+	
+python3 odoo-bin --addons addons,~/qsb-consulting -d data1
+
+
+git remote add main https://github.com/JaypalMaru/qsb-consulting.git
+
+
+./odoo-bin --addons addons,~/odoo-training-emp-3 -d new2
+
+
+python3 odoo-bin --addons addons,~/hrm -d hrdata
+
+
+python3 odoo-bin --addons addons,~/gobezu,~/hr.qaid.hr.20220626/opt/odoo13/hr,~/oca,~/betolo -d hrdata
+
+sudo su postgres
+
+ /c odoo16
+ 
+ 
