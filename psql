@@ -1,0 +1,10 @@
+SELECT so.id, sol.order_id, sol.id,
+	so.consignment_customer, so.company_id, so.amount_total, so.currency_id, so.warehouse_id, so.property_is_consignment_order,
+	sol.product_id, sol.product_uom_qty, sol.price_total,
+	rp.name, rp.id
+	FROM sale_order so 
+	INNER JOIN sale_order_line sol ON so.id = sol.order_id
+	INNER JOIN res_partner rp ON so.consignment_customer = rp.id
+	INNER JOIN stock_location sl ON rp.id = sl.partner_id
+	WHERE so.property_is_consignment_order = True
+
